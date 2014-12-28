@@ -24,5 +24,6 @@ n = 4;
 
 C = rand(n,n);
 
-[A1,B1,r,v] = ctrl(A,B,C)
-[T1,T2,T3,T4,T5] = ctrbf(A,B,C)
+%[A1,B1,r,v] = ctrl(A,B,C)
+%[T1,T2,T3,T4,T5] = ctrbf(A,B,C)
+[Bo] = baza_ortho(A)
