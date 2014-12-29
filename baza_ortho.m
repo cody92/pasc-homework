@@ -3,7 +3,7 @@
 function [Bo] = baza_ortho(Ar)
 	[U, T] = schur(Ar);
 	%[Qo, To] = schord(Q,T,4)
-	[US,TS] = ordschur(U,T,'lhp');
+	[US,TS] = ordschur(U,T,'lhp')
 	[ni nj] = size(TS);
 	na = 0;
 	for i = 1:ni

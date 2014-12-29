@@ -29,5 +29,5 @@ n = 6;
 C = rand(n,n);
 
 %[A1,B1,r,v] = ctrl(A,B,C)
-[ABAR, BBAR, CBAR, T, K] = ctrbf(A,B,C)
+[ABAR, BBAR, CBAR, T, K] = ctrbf(A,B,C);
 [Bo] = baza_ortho(A)
