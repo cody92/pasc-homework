@@ -8,7 +8,7 @@ function [rankS,U,H1] = reducere(B)
 	end
 	
 	%step 5.61
-	[U,S,V] = svd(B);
+	[U,S,V] = svd(B)
 	rankS = rank(S);
 	Si = S(1:rankS, 1:rankS);
 	V1 = V(1:rankS, 1:rankS);

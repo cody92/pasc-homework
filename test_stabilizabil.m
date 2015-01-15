@@ -22,29 +22,16 @@ B= [
 ];
 n = 8;
 
-% A=[
-% 0 1 0 0 0;
-% 1 0 -1 0 1;
-% 0 0 0 1 0;
-% 0 0 0 0 -1;
-% 0 -1 0 -1 0;
-% ];
-
-% B=[
-% 0 0;
-% 1 -1;
-% 0 0;
-% 0 0;
-% 1 1;
-% ];
-
-% n = 5;
-
-%A = rand(n,n);
-%B = rand(n,n);
-
 C = rand(n,n);
 
-%[A1,B1,r,v] = ctrl(A,B,C)
-[Ar,nc] = ctrl_bf(A,B,C);
-[Bo] = baza_ortho(Ar)
+b = [1 -1 15 -8 10];
+a = [-10 -2 -6 5 -7 -9 1 0 -8 0 0 6 0 0 0 0];
+
+%[A B C D] = tf2ss(b,a)
+[Abar, nc, T] = ctrl_bf(A,B,C)
+[ni nj] = size(Abar);
+if(ni == 0) 
+	display('Matrice controlabila');
+else
+[Bs, Bns] = baza_ortho_stabilizabila(Abar, T, nc)
+end
